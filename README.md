@@ -1,2 +1,2 @@
 # ZMusic
-A powerful and lightweight music streaming service
+A powerful light weight music streaming service. 
