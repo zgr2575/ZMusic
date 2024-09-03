@@ -4,22 +4,69 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ZMusic</title>
-  <script src="./scripts/load.js"></script>
+  <script>
+    function hide() {
+      setTimeout(() => {
+        const loader = document.getElementById('loading-screen');
+        loader.classList.add('hidden');
+        setTimeout(() => {
+          loader.style.display = 'none';
+          document.querySelector('.content').classList.add('visible');
+        }, 500);
+      }, 1000);
+    }
+  </script>
   <link rel="stylesheet" href="./styles/sbe.css">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 </head>
 
 <body onload="hide()">
 <header>
-  <h1 style="padding:5px;font-size:38px;font-family: Quicksand, Helvetica, sans-serif;">ZMusic</h1>
+  <div class="header-container">
+    <h1>ZMusic</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 <br>
-  <div class="loader" sytle="font-size:48px;font-family: Quicksand, Helvetica, sans-serif;" id="loading-screen">Loading Greatness...</div>
- <div class="maindiv">
-   <center>
-   <h1 style="font-size:38px;font-family: Quicksand, Helvetica, sans-serif;">Welcome to ZMusic</h1>
-   <p style="font-size:38px;font-family: Quicksand, Helvetica, sans-serif;">"Smarter" Music</p>   
-  </center> 
- </div>
+<div class="loader" id="loading-screen">
+  <div class="spinner"></div>
+  <div>Loading Greatness...</div>
+</div>
+<div class="content">
+  <section id="home">
+    <center>
+      <h1>Welcome to ZMusic</h1>
+      <p>"Smarter" Music</p>   
+    </center> 
+  </section>
+
+  <section id="features">
+    <center>
+      <h1>Features</h1>
+      <p>Explore the unique and innovative features of ZMusic that make it stand out in the world of music streaming.</p>
+    </center> 
+  </section>
+
+  <section id="about">
+    <center>
+      <h1>About ZMusic</h1>
+      <p>Learn more about our mission, vision, and the story behind ZMusic.</p>
+    </center> 
+  </section>
+
+  <section id="contact">
+    <center>
+      <h1>Contact Us</h1>
+      <p>Get in touch with our team for support, feedback, or inquiries.</p>
+    </center> 
+  </section>
+</div>
 </body>
 </html>

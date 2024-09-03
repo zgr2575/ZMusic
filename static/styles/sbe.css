@@ -1,64 +1,172 @@
-/* 
-This is a default css for smarterbackend fronted stuff ect, keep if you want i have sbe branding 
-everywhere
-*/
+/* Default CSS for SmarterBackend frontend elements. SBE branding is consistent throughout. */
+
 * { 
     color: white;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-div {
-background-color: blueviolet;
-border-radius: 5px;
-width: 50%;
-padding-top: 5px;
-padding-bottom: 5px;
-font-size:38px;
-font-family: Quicksand, Helvetica, sans-serif;
+
+body {
+    background-attachment: fixed;
+    background-color: rgb(30, 27, 37);
+    padding: 12px;
+    font-family: Quicksand, Helvetica, sans-serif;
 }
+
+/* Header with Animation */
 header {
     background-color: rgb(67, 43, 226);
-    width: 100%;
+    padding: 10px 0;
     border-radius: 8px;
-    padding: 0.5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInDown 1s ease forwards;
 }
-.maindiv {
-background-color: #18558d;
-width: 100%;
-min-height: 48px;
+
+.header-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+header h1 {
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ccc;
+    transform: translateY(-3px);
+}
+
+/* Content Sections with Animation */
+.content {
+    display: none;
+}
+
+.content.visible {
+    display: block;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+section {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #18558d;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    text-align: center;
+}
+
+section h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+section p {
+    font-size: 24px;
+    color: #e0e0e0;
+}
+
+/* Loader with Spinner */
 .loader {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(40, 40, 43); /* semi-transparent white background */
-    z-index: 9999; /* make sure it's on top of everything else */
+    background-color: rgb(40, 40, 43); /* Dark semi-transparent background */
+    z-index: 9999; /* Ensures it appears above other content */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    opacity: 1;
+    transition: opacity 0.5s ease-out; /* Fade-out transition */
 }
-/* div {
-    background-color: #8a2be2;
-    width: 100%;
-    height: 100%;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    } */
-body {
-background-attachment: fixed;
-background-color: rgb(30, 27, 37);
-padding: 12px;
+
+.loader.hidden {
+    opacity: 0;
+    pointer-events: none; /* Prevent interaction during fade-out */
 }
+
+.spinner {
+    border: 8px solid rgba(255, 255, 255, 0.3);
+    border-top: 8px solid white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Fade-In Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Button Styling (if applicable) */
 .button {
     font: bold 11px Quicksand;
     text-decoration: none;
     background-color: #18558d;
     color: #e6e6e6;
-    padding: 2px 6px 2px 6px;
-    border-top: 1px solid #cccccc00;
-    border-right: 1px solid #33333300;
-    border-bottom: 1px solid #33333300;
-    border-left: 1px solid #CCCCCC00;
+    padding: 2px 6px;
+    border: 1px solid transparent;
     border-radius: 5px;
     width: 50%;
-  }
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+    background-color: #1b4e7a;
+    transform: scale(1.05);
+}

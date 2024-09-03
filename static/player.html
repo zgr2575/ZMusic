@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZMusic Player</title>
+    <link rel="stylesheet" href="./styles/player.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <div class="player-container">
+        <div class="album-art">
+            <img id="album-cover" src="./images/defualt.png" alt="Album Cover">
+        </div>
+        <div class="track-info">
+            <div id="track-title">Track Title</div>
+            <div id="track-artist">Artist Name</div>
+        </div>
+        <div class="controls">
+          <button id="prev"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+<button id="play-pause"><i class="fas fa-play" aria-hidden="true"></i></button>
+<button id="next"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+<button id="shuffle"><i class="fas fa-random" aria-hidden="true"></i></button>
+<button id="repeat"><i class="fas fa-repeat" aria-hidden="true"></i></button>
+
+        </div>
+        <div class="progress">
+            <input type="range" id="progress-bar" value="0">
+            <div id="time-info">
+                <span id="current-time">0:00</span> / <span id="total-time">0:00</span>
+            </div>
+        </div>
+    </div>
+    <script src="./scripts/player.js"></script>
+</body>
+</html>
